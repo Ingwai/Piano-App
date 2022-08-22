@@ -42,6 +42,12 @@ main {
 
 .key:active {
 	background-color: rgb(255, 255, 0);
+	color: blue;
+}
+
+.key.active {
+	background-color: rgb(255, 255, 0);
+	color: blue;
 }
 
 .keys__white {
@@ -55,7 +61,7 @@ main {
 	justify-content: center;
 	align-items: end;
 	padding-bottom: 10rem;
-	width: 9.8rem;
+	width: 9.15rem;
 	height: 50rem;
 	background-color: aliceblue;
 	border: 1px solid black;
@@ -84,41 +90,41 @@ main {
 }
 
 .key-black:nth-child(1) {
-	left: 7rem;
+	left: 6.4rem;
 }
 
 .key-black:nth-child(2) {
-	left: 17rem;
+	left: 15.7rem;
 }
 
 .key-black:nth-child(3) {
-	left: 37rem;
+	left: 34.5rem;
 }
 
 .key-black:nth-child(4) {
-	left: 47rem;
+	left: 43.8rem;
 }
 
 .key-black:nth-child(5) {
-	left: 57rem;
+	left: 53.2rem;
 }
 
 .key-black:nth-child(6) {
-	left: 77rem;
+	left: 71.8rem;
 }
 
 .key-black:nth-child(7) {
-	left: 87rem;
+	left: 81.2rem;
 }
 
 .key-black:nth-child(8) {
-	left: 107rem;
+	left: 99.9rem;
 }
 
 .key-black:nth-child(9) {
-	left: 117rem;
+	left: 109.2rem;
 }
 
 .key-black:nth-child(10) {
-	left: 127rem;
+	left: 118.6rem;
 }
