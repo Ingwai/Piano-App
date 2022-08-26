@@ -1,5 +1,10 @@
 const allKeys = document.querySelectorAll('.key');
-
+const downBtn = document.querySelector('.octave_down');
+const upBtn = document.querySelector('.octave_up');
+const octaveNumber = document.querySelector('.octave_number');
+let currentOctave = ['1-2', '2-3', '3-4', '4-5', '5-6', '7'];
+let i = 2;
+octaveNumber.textContent = currentOctave[i];
 // prettier-ignore
 //
 // a array with the order of sounds corresponding to the name in the sound directory
@@ -16,22 +21,50 @@ function playNote(link) {
 }
 
 allKeys.forEach((key, index) => {
-	const link = `sound/octave3-4/key${soundArray[index]}.mp3`;
-	key.addEventListener('click', () => playNote(link));
+	key.addEventListener('click', () => {
+		linkOctave(index);
+	});
 });
+
+function linkOctave(index) {
+	octaveNumber.textContent = currentOctave[i];
+	const link = `sound/octave${currentOctave[i]}/key${soundArray[index]}.mp3`;
+	playNote(link);
+}
+
+function octaveUp() {
+	i++;
+	i <= 5 ? '' : (i = 5);
+	octaveNumber.textContent = currentOctave[i];
+	linkOctave(index);
+}
+
+function octaveDown() {
+	i--;
+	i >= 0 ? '' : (i = 0);
+	octaveNumber.textContent = currentOctave[i];
+	linkOctave(index, currentOctave[i]);
+}
 
 document.addEventListener('keydown', e => {
 	try {
 		const pressKeyOnKeyboard = e.keyCode; //variable with keycode number, key "z" = keycode '90'
-		const numberInArray = codeArray.indexOf(pressKeyOnKeyboard); // indicates index the keycode of the pressed key in the codeArray array
-		/* let index = numberInArray < 9 ? '0' + (numberInArray + 1) : numberInArray + 1; */
-		/* const link = `sound/key${index}.mp3`; */
-		const link = `sound/octave3-4/key${soundArray[numberInArray]}.mp3`;
-		const keypress = document.getElementsByClassName('key')[numberInArray]; // we take the key pressed and set the active class to it and change background on yellow
+		const index = codeArray.indexOf(pressKeyOnKeyboard); // indicates index the keycode of the pressed key in the codeArray array
+		/* let i = index < 9 ? '0' + (index + 1) : index + 1; */
+		/* const link = `sound/key${i}.mp3`; */
+		linkOctave(index);
+		const keypress = document.getElementsByClassName('key')[index]; // we take the key pressed and set the active class to it and change background on yellow
 		keypress.classList.add('active');
 		setTimeout(() => keypress.classList.remove('active'), 50); //remove classe active and yellow background
-		playNote(link);
 	} catch (error) {
 		console.error('This key in computer keyboard is no bind with any sound');
 	}
 });
+
+document.addEventListener('keydown', e => {
+	if (e.keyCode === 39) octaveUp();
+	if (e.keyCode === 37) octaveDown();
+});
+
+upBtn.addEventListener('click', octaveUp);
+downBtn.addEventListener('click', octaveDown);
