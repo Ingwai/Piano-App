@@ -1,195 +1,185 @@
-@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Faster+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500&display=swap");
 @font-face {
-	font-family: 'Orloj';
-	src: url('font/Orloj.otf') format('opentype');
+  font-family: "Orloj";
+  src: url("font/Orloj.otf") format("opentype");
 }
-
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-	height: 100vh;
-	background-color: black;
-	display: grid;
-	place-items: center;
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  place-items: center;
 }
 
 main {
-	width: 145rem;
-	height: 65rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: rgb(109, 178, 238);
-	flex-direction: column;
-	border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 145rem;
+  height: 65rem;
+  background-color: rgb(109, 178, 238);
+  flex-direction: column;
+  border-radius: 1rem;
 }
 
 .panel {
-	width: 140rem;
-	height: 10rem;
-	background-color: black;
-	display: flex;
-	justify-content: center;
+  width: 140rem;
+  height: 10rem;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pianosynth {
-	width: 45rem;
-	height: 10rem;
-	display: grid;
-	place-items: center;
-	color: rgb(255, 191, 0);
-	font-size: 45px;
-	font-family: 'Faster One', cursive;
+  width: 45rem;
+  height: 10rem;
+  display: grid;
+  place-items: center;
+  font-size: 5.2rem;
+  font-family: "Faster One", cursive;
 }
 
 .synthboard_box {
-	width: 80rem;
-	height: 10rem;
-	/* 	background-color:green; */
+  width: 80rem;
+  height: 10rem;
+  /* 	background-color:green; */
 }
 
 .octave_box {
-	width: 25rem;
-	height: 10rem;
+  width: 25rem;
+  height: 10rem;
 }
-
 .octave_text {
-	width: 100%;
-	height: 4rem;
-	display: grid;
-	place-items: center;
-	color: rgb(191, 255, 0);
-	font-size: 20px;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 4rem;
+  color: rgb(191, 255, 0);
+  font-size: 2rem;
+  font-family: "Tomorrow", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
 }
-
 .octave_button {
-	display: flex;
-	justify-content: center;
-	gap: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
 }
-
 .octave_btn {
-	line-height: 0;
-	font-family: 'Orloj';
-	border-radius: 1rem;
-	display: grid;
-	place-items: center;
-	height: 5rem;
-	width: 5rem;
-	font-size: 4rem;
-	border: 2px outset rgb(191, 255, 0);
-	margin: 0.5rem;
-	padding-bottom: 1rem;
-	color: rgb(191, 255, 0);
-	cursor: pointer;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+  font-family: "Orloj";
+  border-radius: 1rem;
+  height: 5rem;
+  width: 5rem;
+  font-size: 4rem;
+  border: 0.2rem outset rgb(191, 255, 0);
+  margin: 0.5rem;
+  padding-bottom: 1rem;
+  color: rgb(191, 255, 0);
+  cursor: pointer;
+  transition: 0.5s;
 }
-
+.octave_btn:hover:not(.octave_number) {
+  background-color: rgb(255, 0, 0);
+}
 .octave_number {
-	width: 10rem;
+  cursor: none;
+  width: 10rem;
 }
 
-.keys {
-	position: relative;
-	width: 140rem;
-	height: 50rem;
-	display: flex;
-	font-size: 2rem;
+.key__box {
+  position: relative;
+  width: 140rem;
+  height: 50rem;
+  display: flex;
+  font-size: 2rem;
 }
-
 .key:active {
-	background-color: rgb(255, 255, 0);
-	color: blue;
+  background-color: rgb(241, 241, 153);
+  color: black;
 }
-
 .key.active {
-	background-color: rgb(255, 255, 0);
-	color: blue;
+  background-color: rgb(241, 241, 153);
 }
-
-.keys__white {
-	display: flex;
-	gap: 0.2rem;
-	text-align: center;
+.key__white--box {
+  display: flex;
+  gap: 0.2rem;
+  text-align: center;
 }
-
 .key-white {
-	display: flex;
-	justify-content: center;
-	align-items: end;
-	padding-bottom: 10rem;
-	width: 9.15rem;
-	height: 50rem;
-	background-color: aliceblue;
-	border: 1px solid black;
-	border-radius: 0 0 1.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: end;
+  font-family: "Tomorrow", sans-serif;
+  padding-bottom: 10rem;
+  width: 9.15rem;
+  height: 50rem;
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 0 0 1.5rem 1.5rem;
 }
-
-.keys-black {
-	display: flex;
-	position: relative;
+.key__black--box {
+  display: flex;
+  position: relative;
 }
-
 .key-black {
-	position: absolute;
-	width: 5.8rem;
-	height: 30rem;
-	border-radius: 0 0 1.2rem 1.2rem;
-	background-color: black;
-	border: 2px solid white;
-	outline: 1px solid black;
-	display: flex;
-	color: white;
-	justify-content: center;
-	align-items: end;
-	padding-bottom: 10rem;
-	/* border-top: 2px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Tomorrow", sans-serif;
+  position: absolute;
+  width: 5.8rem;
+  height: 30rem;
+  border-radius: 0 0 1.2rem 1.2rem;
+  background-color: black;
+  border: 0.2rem solid white;
+  outline: 0.1rem solid black;
+  color: white;
+  align-items: end;
+  padding-bottom: 10rem;
 }
-
 .key-black:nth-child(1) {
-	left: 6.4rem;
+  left: 6.4rem;
 }
-
 .key-black:nth-child(2) {
-	left: 15.7rem;
+  left: 15.7rem;
 }
-
 .key-black:nth-child(3) {
-	left: 34.5rem;
+  left: 34.5rem;
 }
-
 .key-black:nth-child(4) {
-	left: 43.8rem;
+  left: 43.8rem;
 }
-
 .key-black:nth-child(5) {
-	left: 53.2rem;
+  left: 53.2rem;
 }
-
 .key-black:nth-child(6) {
-	left: 71.8rem;
+  left: 71.8rem;
 }
-
 .key-black:nth-child(7) {
-	left: 81.2rem;
+  left: 81.2rem;
 }
-
 .key-black:nth-child(8) {
-	left: 99.9rem;
+  left: 99.9rem;
 }
-
 .key-black:nth-child(9) {
-	left: 109.2rem;
+  left: 109.2rem;
 }
-
 .key-black:nth-child(10) {
-	left: 118.6rem;
-}
+  left: 118.6rem;
+}/*# sourceMappingURL=style.css.map */

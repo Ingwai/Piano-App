@@ -2,6 +2,7 @@ const allKeys = document.querySelectorAll('.key');
 const downBtn = document.querySelector('.octave_down');
 const upBtn = document.querySelector('.octave_up');
 const octaveNumber = document.querySelector('.octave_number');
+const pianosynth = document.querySelector('.pianosynth');
 let currentOctave = ['1-2', '2-3', '3-4', '4-5', '5-6', '7'];
 let i = 2;
 octaveNumber.textContent = currentOctave[i];
@@ -68,3 +69,17 @@ document.addEventListener('keydown', e => {
 
 upBtn.addEventListener('click', octaveUp);
 downBtn.addEventListener('click', octaveDown);
+
+function pianosynthColorChange() {
+	setInterval(() => {
+		let r = Math.floor(Math.random() * 255 + 1);
+		let g = Math.floor(Math.random() * 255 + 1);
+		let b = Math.floor(Math.random() * 255 + 1);
+		let r1 = Math.floor(Math.random() * 255 + 1);
+		let g1 = Math.floor(Math.random() * 255 + 1);
+		let b1 = Math.floor(Math.random() * 255 + 1);
+		pianosynth.style.cssText = `background: linear-gradient(to right, rgb(${r}, ${g}, ${b}), rgb(${r1}, ${g1}, ${b1})); -webkit-background-clip: text; -webkit-text-fill-color: transparent`;
+		console.log(pianosynth.style.cssText);
+	}, 2000);
+}
+pianosynthColorChange();
