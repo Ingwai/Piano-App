@@ -83,3 +83,28 @@ function pianosynthColorChange() {
 	}, 2000);
 }
 pianosynthColorChange();
+
+
+
+// const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+// function playsound() {
+// 	const oscillator = audioContext.createOscillator();
+// 	const gainNode = audioContext.createGain();
+// 	oscillator.connect(gainNode);
+// 	gainNode.connect(audioContext.destination);
+
+// 	oscillator.type = 'triangle';
+// 	// oscillator.type = "sine";
+// 	// oscillator.type = "square";
+// 	// oscillator.type = "sawtooth";
+
+// 	oscillator.frequency.value = 440;
+
+// 	const now = audioContext.currentTime;
+// 	gainNode.gain.setValueAtTime(10, now);
+// 	gainNode.gain.exponentialRampToValueAtTime(0.11, now + 0.7);
+// 	oscillator.start(now);
+// 	oscillator.stop(now + 0.7);
+// }
+
