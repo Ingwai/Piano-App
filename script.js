@@ -79,12 +79,9 @@ function pianosynthColorChange() {
 		let g1 = Math.floor(Math.random() * 255 + 1);
 		let b1 = Math.floor(Math.random() * 255 + 1);
 		pianosynth.style.cssText = `background: linear-gradient(to right, rgb(${r}, ${g}, ${b}), rgb(${r1}, ${g1}, ${b1})); -webkit-background-clip: text; -webkit-text-fill-color: transparent`;
-		console.log(pianosynth.style.cssText);
 	}, 2000);
 }
 pianosynthColorChange();
-
-
 
 // const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -107,4 +104,3 @@ pianosynthColorChange();
 // 	oscillator.start(now);
 // 	oscillator.stop(now + 0.7);
 // }
-
